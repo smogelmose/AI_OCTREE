@@ -8,7 +8,7 @@ public class CreateOctree : MonoBehaviour
     void Start()
     {
         ot = new Octree(worldObjects, 1);
-        Debug.Log(ot.boundsD);
+   
     }
 
     // Update is called once per frame
@@ -21,8 +21,7 @@ public class CreateOctree : MonoBehaviour
     {
         if(Application.isPlaying)
         {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(ot.boundsD.center, ot.boundsD.size);
+            ot.rootNode.Draw();
         }
     }
 }
